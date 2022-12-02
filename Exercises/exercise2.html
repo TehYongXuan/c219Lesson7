@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exercise 2</title>
+</head>
+
+<body>
+
+
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name" value=""><br><br>
+        <input id="email" type="email" placeholder="Email" value=""><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+
+        <input type="radio" name="gender" value="M" />Male
+        <input type="radio" name="gender" value="F" />Female
+        <!-- Submit button -->
+        <br><br>
+        <input type="button" value="Submit">
+
+    </form>
+    <div id="information"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("body").css("background-color", "lightblue");
+            $("#myForm").css("border-style", "solid");
+            $("*").css("font-family", "Arial");
+            
+            $("[type='button']").click(function(){
+
+                $("#information").html(
+                  
+                "Name: " + $("#name").val()+ "<br>" + 
+                "Email: " + $("#email").val()+ "<br>" + 
+                "Gender: " + $("input[name='gender']:checked").val()
+
+                )
+                .hide()
+                .fadeIn(3000)
+
+            });
+                
+            $("#information").mouseover(function(){
+            
+                $(this).slideUp(3000);
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

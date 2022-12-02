@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name" value=""><br><br>
+        <input id="email" type="email" placeholder="Email" value=""><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+        
+        <input type="radio" name="gender" value="M" />Male
+        <input type="radio" name="gender" value="F" />Female
+        <!-- Submit button -->
+        <br><br>
+        <button type="button" onclick="myFunction()">Submit</button>
+
+    </form>
+
+    <!-- Display form data -->
+<br>
+<br>
+    <div id="information"></div>
+    <div id="gender"></div>
+    
+    <script>
+        // JavaScript to get and display form data
+        function myFunction(){
+            var data = document.getElementById("name").value;
+            var data2 = document.getElementById("email").value;
+            // var data3 = document.getElementsByName("gender");
+            var data3 = document.querySelector(":checked").value;
+            document.getElementById("gender").innerHTML =  "Gender: " + data3;
+
+            // for (i = 0; i < data3.length; i++){
+            //     if (data3[i].checked)
+            //     document.getElementById("gender"). innerHTML = "Gender: " + data3[i].value;
+            // }
+            document.getElementById("information").innerHTML = "Name: " + data  + "<br>"+  " Email: " + data2 ;
+        }
+    </script>
+</body>
+
+</html>
